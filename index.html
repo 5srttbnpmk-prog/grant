@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/x-icon" href="Logo.png">
+    <title>Всероссийский грант | Админ-панель | ООО «Скултех»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- АДМИНСКАЯ БОКОВАЯ ПАНЕЛЬ (фейковые кнопки) -->
+    <div class="admin-sidebar">
+        <div class="sidebar-header">
+            <h3>Грант.Админ</h3>
+            <p>панель управления</p>
+        </div>
+        <div class="sidebar-nav">
+            <div class="nav-item active">
+                <i>📋</i> <span>Заявки на грант</span>
+            </div>
+            <div class="nav-item">
+                <i>👥</i> <span>Пользователи</span>
+            </div>
+            <div class="nav-item">
+                <i>⚙️</i> <span>Настройки</span>
+            </div>
+            <div class="nav-item">
+                <i>📊</i> <span>Отчёты</span>
+            </div>
+            <div class="nav-item">
+                <i>📁</i> <span>Архив решений</span>
+            </div>
+            <div class="nav-item">
+                <i>🚪</i> <span>Выход</span>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <div>Версия 2.4.1</div>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Сервер: онлайн</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- основной контент -->
+    <div class="main-content">
+        <div class="grant-card">
+            <div class="top-header">
+                <div class="company-info">
+                    <h1>ООО «Скултех» — Онлайн-школа «Квантастика»</h1>
+                    <p>Лицензия № Л035-01298-77/00123456 | ИНН 772345678901</p>
+                </div>
+                <div class="skolkovo-status">Резидент инновационного центра «Сколково»</div>
+            </div>
+
+            <div class="grant-title">
+                <h2>Всероссийский грант на обучение</h2>
+                <p>Программа поддержки талантливых детей — цифровая экономика РФ</p>
+            </div>
+
+            <div class="form-section">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>ФИО законного представителя</label>
+                        <input type="text" id="parentName" placeholder="Иванов Иван Иванович" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label>ФИО учащегося</label>
+                        <input type="text" id="studentName" placeholder="Иванов Пётр Иванович" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Дата рождения учащегося</label>
+                        <input type="date" id="birthDate" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <label>Город проживания</label>
+                        <input type="text" id="city" placeholder="Москва, Санкт-Петербург ..." autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Итоговая оценка (Практика)</label>
+                        <select id="grade">
+                            <option value="5">Отлично (5)</option>
+                            <option value="4">Хорошо (4)</option>
+                            <option value="3">Удовлетворительно (3)</option>
+                            <option value="2">Неудовлетворительно (2)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Индивидуальные достижения учащегося</label>
+                        <input type="text" id="achievements" placeholder="Победитель олимпиад, проекты, хакатоны..." autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Социальное положение родителей/опекунов</label>
+                        <select id="socialStatus">
+                            <option value="unemployed">Безработные / малообеспеченные</option>
+                            <option value="worker">Рабочие (семья рабочего класса)</option>
+                            <option value="employee">Служащие / работники бюджетной сферы</option>
+                            <option value="business">Предприниматели / самозанятые</option>
+                            <option value="pensioner">Пенсионеры / предпенсионеры</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Льготы (категория)</label>
+                        <select id="benefits">
+                            <option value="largeFamily">Многодетность / родитель-одиночка</option>
+                            <option value="veteran">Участник СВО / ветеран боевых действий</option>
+                            <option value="disability">Инвалидность</option>
+                            <option value="other">Другое</option>
+                            <option value="none">Нет</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- техническое поле: идентификатор встречи -->
+                <div class="form-row">
+                    <div class="input-group tech-field">
+                        <label>Идентификатор встречи (ID консультации)</label>
+                        <select id="meetingId" class="meeting-id">
+                            <option value="expensive">242145125125 — стандартная консультация</option>
+                            <option value="cheap">354532523532 — расширенная консультация</option>
+                        </select>
+                        <div style="font-size:0.7rem; color:#6f8f9f; margin-top: 4px;">Укажите ID, полученный при записи на встречу со специалистом</div>
+                    </div>
+                </div>
+
+                <button class="btn-submit" id="submitBtn">Подать заявку на грант</button>
+            </div>
+
+            <div class="result-panel" id="resultPanel">
+                <div id="resultContent">
+                    <div style="color:#4a6f80; font-size:0.9rem;">Заполните данные и отправьте заявку. Решение будет принято в течение 1,5–3 минут.</div>
+                </div>
+            </div>
+            <div class="info-note">
+                * Данные переданы и рассмотрены в соответствии с порядком предоставления грантов.<br>
+                Решение о предоставлении льготного обучения принимается на основе успеваемости и социального статуса.
+            </div>
+        </div>
+    </div>
+    <script src="index.js">
+       
+    </script>
+</body>
+</html>
