@@ -227,7 +227,7 @@ function startGrantVerification() {
         { title: "Расчёт итогового балла", pendingText: "Ожидание", icon: "◌", activeIcon: "⟳", activeText: "Расчёт...", detailMsg: "Формирование рейтинга для предоставления гранта." },
         { title: "Формирование результата", pendingText: "Ожидание", icon: "◌", activeIcon: "⟳", activeText: "Завершение...", detailMsg: "Подготовка итогового решения." }
     ];
-    const totalDurationMs = Math.floor(Math.random() * (180000 - 90000 + 1) + 90000);
+    const totalDurationMs = 90000;
     let remaining = totalDurationMs;
     let delays = [];
     for (let i = 0; i < stagesList.length; i++) {
